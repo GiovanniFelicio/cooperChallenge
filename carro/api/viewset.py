@@ -1,8 +1,12 @@
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
 
+from carro.api.service import CarroService
+
 
 class CarroViewSet(ViewSet):
+
+    service = CarroService()
 
     def retrieve(self, request, pk=None):
         pass

@@ -1,5 +1,6 @@
 from django.db import models
 
+from carro.manager import CarroManager
 from marca.models import Marca
 
 
@@ -13,6 +14,8 @@ class Carro(models.Model):
     ano = models.DateField(name='ano')
     origem = models.CharField(name='origem', max_length=20)
     marca = models.ForeignKey(Marca, name='marca_id', null=False, on_delete=models.PROTECT)
+
+    manager = CarroManager()
 
     def __str__(self):
         return self.nome
