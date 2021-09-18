@@ -11,14 +11,14 @@ class MarcaSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'nome': {
                 'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Nome'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Nome')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Nome'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Nome')
                 }
             },
             'origem': {
                 'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Origem'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Origem')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Origem'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Origem')
                 }
             },
         }
