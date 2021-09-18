@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from architecture.common.enums.enum_exception_message import EnumExceptionMessage
 from marca.models import Marca
 
 
@@ -10,14 +11,14 @@ class MarcaSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'nome': {
                 'error_messages': {
-                    'required': '* O Campo {} é obrigatório'.format('Nome'),
-                    'blank': '* O Campo {} é obrigatório'.format('Nome')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Nome'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Nome')
                 }
             },
             'origem': {
                 'error_messages': {
-                    'required': '* O Campo {} é obrigatório'.format('Origem'),
-                    'blank': '* O Campo {} é obrigatório'.format('Origem')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Origem'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Origem')
                 }
             },
         }

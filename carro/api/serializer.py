@@ -1,5 +1,5 @@
 from rest_framework import serializers
-
+from architecture.common.enums.enum_exception_message import EnumExceptionMessage
 from carro.models import Carro
 
 
@@ -11,56 +11,56 @@ class CarroSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'nome': {
                 'error_messages': {
-                    'required': '* O Campo {} é obrigatório'.format('Nome'),
-                    'blank': '* O Campo {} é obrigatório'.format('Nome')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Nome'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Nome')
                 }
             },
             'km_por_galao': {
                 'error_messages': {
-                    'required': '* O Campo {} é obrigatório'.format('Km por Galão'),
-                    'blank': '* O Campo {} é obrigatório'.format('Km por Galão')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Km por Galão'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Km por Galão')
                 }
             },
             'cilindros': {
                 'error_messages': {
-                    'required': '* O Campo {} é obrigatório'.format('Cilindros'),
-                    'blank': '* O Campo {} é obrigatório'.format('Cilindros')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Cilindros'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Cilindros')
                 }
             },
             'cavalo_de_forca': {
                 'error_messages': {
-                    'required': '* O Campo {} é obrigatório'.format('Cavalos de Força'),
-                    'blank': '* O Campo {} é obrigatório'.format('Cavalos de Força')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Cavalos de Força'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Cavalos de Força')
                 }
             },
             'peso': {
                 'error_messages': {
-                    'required': '* O Campo {} é obrigatório'.format('Peso'),
-                    'blank': '* O Campo {} é obrigatório'.format('Peso')
+                    'required':EnumExceptionMessage.REQUIRED_FIELD.format('Peso'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Peso')
                 }
             },
             'aceleracao': {
                 'error_messages': {
-                    'required': '* O Campo {} é obrigatório'.format('Aceleração'),
-                    'blank': '* O Campo {} é obrigatório'.format('Aceleração')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Aceleração'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Aceleração')
                 }
             },
             'ano': {
                 'error_messages': {
-                    'required': '* O Campo {} é obrigatório'.format('Ano'),
-                    'blank': '* O Campo {} é obrigatório'.format('Ano')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Ano'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Ano')
                 }
             },
             'origem': {
                 'error_messages': {
-                    'required': '* O Campo {} é obrigatório'.format('Origem'),
-                    'blank': '* O Campo {} é obrigatório'.format('Origem')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Origem'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Origem')
                 }
             },
             'marca': {
                 'error_messages': {
-                    'required': '* O Campo {} é obrigatório'.format('Marca'),
-                    'blank': '* O Campo {} é obrigatório'.format('Marca')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Marca'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Marca')
                 }
             },
         }
