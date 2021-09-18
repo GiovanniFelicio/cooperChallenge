@@ -9,6 +9,7 @@ class CarroViewSet(ModelViewSet):
     queryset = Carro.manager.all()
     serializer_class = CarroSerializer
     filterset_class = CarroFilter
+    http_method_names = ['get', 'post', 'put', 'delete']
 
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
