@@ -1,12 +1,9 @@
-from django.db.models import Manager
+from django.db.models import Manager, Q
 
 
 class MarcaManager(Manager):
-    def get_queryset(self):
+    def __get_queryset(self):
         return super(MarcaManager, self).get_queryset()
 
-    def find_contains_nome(self, nome: str):
-        return self.get_queryset().filter(nome__contains=nome)
-
-    def find_by_origem(self, origem: str):
-        return self.get_queryset().filter(origem=origem).first()
+    def find_all(self):
+        return self.__get_queryset().all()

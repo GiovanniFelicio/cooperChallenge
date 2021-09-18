@@ -1,66 +1,24 @@
 from rest_framework import serializers
-from architecture.common.enums.enum_exception_message import EnumExceptionMessage
+
+from marca.api.serializer import MarcaSerializer
+from .serializer_details import extra_kwargs
 from carro.models import Carro
 
 
 class CarroSerializer(serializers.ModelSerializer):
     class Meta:
         model = Carro
-        fields = ('nome', 'km_por_galao', 'cilindros', 'cavalo_de_forca', 'peso', 'aceleracao', 'ano', 'origem', 'marca')
+        fields = ('id', 'nome', 'km_por_galao', 'cilindros', 'cavalo_de_forca', 'peso', 'aceleracao', 'origem', 'ano', 'marca')
+        read_only_fields = ('id',)
 
-        extra_kwargs = {
-            'nome': {
-                'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Nome'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Nome')
-                }
-            },
-            'km_por_galao': {
-                'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Km por Galão'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Km por Galão')
-                }
-            },
-            'cilindros': {
-                'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Cilindros'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Cilindros')
-                }
-            },
-            'cavalo_de_forca': {
-                'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Cavalos de Força'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Cavalos de Força')
-                }
-            },
-            'peso': {
-                'error_messages': {
-                    'required':EnumExceptionMessage.REQUIRED_FIELD.value.format('Peso'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Peso')
-                }
-            },
-            'aceleracao': {
-                'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Aceleração'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Aceleração')
-                }
-            },
-            'ano': {
-                'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Ano'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Ano')
-                }
-            },
-            'origem': {
-                'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Origem'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Origem')
-                }
-            },
-            'marca': {
-                'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Marca'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Marca')
-                }
-            },
-        }
+        extra_kwargs = extra_kwargs
+
+
+class CarroDetailSerializer(serializers.ModelSerializer):
+
+    marca = MarcaSerializer()
+
+    class Meta:
+        model = Carro
+        fields = ('id', 'nome', 'km_por_galao', 'cilindros', 'cavalo_de_forca', 'peso', 'aceleracao', 'origem', 'ano', 'marca')
+        read_only_fields = ('id', 'nome', 'km_por_galao', 'cilindros', 'cavalo_de_forca', 'peso', 'aceleracao', 'origem', 'ano', 'marca')
