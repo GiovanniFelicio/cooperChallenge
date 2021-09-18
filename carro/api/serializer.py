@@ -11,56 +11,56 @@ class CarroSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'nome': {
                 'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Nome'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Nome')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Nome'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Nome')
                 }
             },
             'km_por_galao': {
                 'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Km por Galão'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Km por Galão')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Km por Galão'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Km por Galão')
                 }
             },
             'cilindros': {
                 'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Cilindros'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Cilindros')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Cilindros'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Cilindros')
                 }
             },
             'cavalo_de_forca': {
                 'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Cavalos de Força'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Cavalos de Força')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Cavalos de Força'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Cavalos de Força')
                 }
             },
             'peso': {
                 'error_messages': {
-                    'required':EnumExceptionMessage.REQUIRED_FIELD.format('Peso'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Peso')
+                    'required':EnumExceptionMessage.REQUIRED_FIELD.value.format('Peso'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Peso')
                 }
             },
             'aceleracao': {
                 'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Aceleração'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Aceleração')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Aceleração'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Aceleração')
                 }
             },
             'ano': {
                 'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Ano'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Ano')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Ano'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Ano')
                 }
             },
             'origem': {
                 'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Origem'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Origem')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Origem'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Origem')
                 }
             },
             'marca': {
                 'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Marca'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Marca')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Marca'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Marca')
                 }
             },
         }
