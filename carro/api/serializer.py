@@ -6,61 +6,25 @@ from carro.models import Carro
 class CarroSerializer(serializers.ModelSerializer):
     class Meta:
         model = Carro
-        fields = ('nome', 'km_por_galao', 'cilindros', 'cavalo_de_forca', 'peso', 'aceleracao', 'ano', 'origem', 'marca')
+        fields = ('nome', 'origem', 'ano')
 
         extra_kwargs = {
             'nome': {
                 'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Nome'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Nome')
-                }
-            },
-            'km_por_galao': {
-                'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Km por Galão'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Km por Galão')
-                }
-            },
-            'cilindros': {
-                'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Cilindros'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Cilindros')
-                }
-            },
-            'cavalo_de_forca': {
-                'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Cavalos de Força'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Cavalos de Força')
-                }
-            },
-            'peso': {
-                'error_messages': {
-                    'required':EnumExceptionMessage.REQUIRED_FIELD.format('Peso'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Peso')
-                }
-            },
-            'aceleracao': {
-                'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Aceleração'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Aceleração')
-                }
-            },
-            'ano': {
-                'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Ano'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Ano')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Nome'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Nome')
                 }
             },
             'origem': {
                 'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Origem'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Origem')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Origem'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Origem')
                 }
             },
-            'marca': {
+            'ano': {
                 'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.format('Marca'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.format('Marca')
+                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Ano'),
+                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Ano')
                 }
-            },
+            }
         }
