@@ -8,3 +8,4 @@ class MarcaViewSet(ModelViewSet):
     queryset = Marca.manager.all()
     serializer_class = MarcaSerializer
     filterset_class = MarcaFilter
+    http_method_names = ['get', 'post', 'put', 'delete']
