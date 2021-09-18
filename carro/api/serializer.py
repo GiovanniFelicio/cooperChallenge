@@ -1,30 +1,24 @@
 from rest_framework import serializers
-from architecture.common.enums.enum_exception_message import EnumExceptionMessage
+
+from marca.api.serializer import MarcaSerializer
+from .serializer_details import extra_kwargs
 from carro.models import Carro
 
 
 class CarroSerializer(serializers.ModelSerializer):
     class Meta:
         model = Carro
-        fields = ('nome', 'origem', 'ano')
+        fields = ('id', 'nome', 'km_por_galao', 'cilindros', 'cavalo_de_forca', 'peso', 'aceleracao', 'origem', 'ano', 'marca')
+        read_only_fields = ('id',)
 
-        extra_kwargs = {
-            'nome': {
-                'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Nome'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Nome')
-                }
-            },
-            'origem': {
-                'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Origem'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Origem')
-                }
-            },
-            'ano': {
-                'error_messages': {
-                    'required': EnumExceptionMessage.REQUIRED_FIELD.value.format('Ano'),
-                    'blank': EnumExceptionMessage.REQUIRED_FIELD.value.format('Ano')
-                }
-            }
-        }
+        extra_kwargs = extra_kwargs
+
+
+class CarroDetailSerializer(serializers.ModelSerializer):
+
+    marca = MarcaSerializer()
+
+    class Meta:
+        model = Carro
+        fields = ('id', 'nome', 'km_por_galao', 'cilindros', 'cavalo_de_forca', 'peso', 'aceleracao', 'origem', 'ano', 'marca')
+        read_only_fields = ('id', 'nome', 'km_por_galao', 'cilindros', 'cavalo_de_forca', 'peso', 'aceleracao', 'origem', 'ano', 'marca')
